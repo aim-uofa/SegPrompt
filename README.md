@@ -4,7 +4,6 @@
 <h2>SegPrompt: Boosting Open-World Segmentation via Category-level Prompt Learning</h2>
 
 Muzhi Zhu<sup>1</sup>, &nbsp; Hengtao Li <sup>1</sup>, &nbsp; [Hao Chen](https://stan-haochen.github.io/)<sup>1#</sup> , &nbsp;  Chengxiang Fan <sup>1</sup>, &nbsp; [Weian Mao](https://scholar.google.com/citations?user=Qu-QXTsAAAAJ)<sup>2,1</sup>, &nbsp; 
-
 [Chenchen Jing](https://jingchenchen.github.io/)<sup>1</sup>, &nbsp; [Yifan Liu](https://irfanicmll.github.io/)<sup>2</sup>, &nbsp;  [Chunhua Shen](https://cshen.github.io/)<sup>1</sup>
 
 <sup>1</sup>[Zhejiang University](https://github.com/aim-uofa), &nbsp;  <sup>2</sup>[The University of Adelaide](https://www.adelaide.edu.au/), &nbsp; 
@@ -18,7 +17,7 @@ Muzhi Zhu<sup>1</sup>, &nbsp; Hengtao Li <sup>1</sup>, &nbsp; [Hao Chen](https:/
 
 ## News
 
-- [2023/07/14] Our work SegPrompt is accepted by ICCV2023! 🎉🎉🎉
+- [2023/07/14] Our work SegPrompt is accepted by Int. Conf. Computer Vision (ICCV) 2023! 🎉🎉🎉
 - [2023/08/30] We release our new benchmark LVIS-OW.
 
 ## Installation
