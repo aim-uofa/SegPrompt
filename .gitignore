@@ -1,0 +1,11 @@
+*.pth
+*.tar
+*.jpg
+*.pt
+*.gif
+*.pyc
+.vscode/
+datasets
+output*
+models
+weights
