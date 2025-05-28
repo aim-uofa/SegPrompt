@@ -1,0 +1,1 @@
+from . import (lvis_categories_tr_part50,lvis_categories_tr)

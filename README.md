@@ -61,11 +61,35 @@ bash tools/prepare_lvisow.sh
 After you successfully get lvis_v1_train_ow.json and lvis_v1_val_resplit_r.json, you can refer to [here](https://github.com/facebookresearch/detectron2/blob/main/detectron2/data/datasets/lvis.py)
 to register the training set and test set. Then you can use our benchmark for training and testing.
 
+### Training on LVIS
+```bash
+# we use 4 A100 GPUs for training
+python train_net.py --num-gpus 4 --config-file configs/lvis/segprompt_lvisfull.yaml
+```
+python train_net.py --num-gpus 4 --config-file configs/coco/instance-segmentation/maskformer2example_freeze_onlycoco_R50_bs16_50ep_3x_repeat_full.yaml --resume
+### Training on LVIS-OW
+```bash 
+# first train a m2f model 
+python train_net.py --num-gpus 4 --config-file configs/lvis_ow/maskformer2example_freeze_R50_bs16_50ep_1x_repeat_rm_r_es.yaml
+
+# then train a  segprompt model
+python train_net.py --num-gpus 4 --config-file configs/lvis_ow/segprompt_lvisow.yaml
+
+```
+### Inference
+```bash
+# use configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep_1x_r.yaml, only use m2f model
+CUDA_VISIBLE_DEVICES=1 python train_net.py --config-file configs/coco/instance-segmentation/maskformer2_R50_bs16_50ep_1x_r.yaml --eval-only MODEL.WEIGHTS output/m2f_binary_lvis_ow/model_final.pth OUTPUT_DIR output/m2f_binary_lvis_ow/test
+``````
 ### Evaluation on LVIS-OW
 ```bash
 python tools/eval_lvis_ow.py --dt-json-file output/m2f_binary_lvis_ow/lvis_r/inference/lvis_instances_results.json
 ```
+### Evaluation on LVIS in an original class-agnostic way
 
+```
+python tools/eval_orilvisapi.py --dt-json-file  output/m2f_binary_lvis_ow/test/inference/lvis_instances_results.json
+```
 
 ## Acknowledgement
 We thank the following repos for their great works:
